@@ -1,0 +1,663 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.addButton {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.addButton:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.searchBar {
+  margin-bottom: var(--space-lg);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem var(--space-lg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  transition: all var(--transition-fast);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.25);
+}
+
+.error {
+  background-color: rgba(255, 82, 82, 0.1);
+  color: var(--danger-color);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+  border-left: 4px solid var(--danger-color);
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--gray-600);
+  padding: var(--space-xxl) 0;
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-xxl) 0;
+  color: var(--gray-600);
+  background-color: var(--gray-100);
+  border-radius: var(--radius-lg);
+  margin: var(--space-lg) 0;
+}
+
+.emptyState p {
+  margin-bottom: var(--space-md);
+}
+
+.emptyStateButton {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-top: var(--space-md);
+  font-weight: 500;
+}
+
+.emptyStateButton:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.textButton {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-fast);
+}
+
+.textButton:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-xl);
+}
+
+.movieTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: var(--card-bg);
+}
+
+.movieTable th,
+.movieTable td {
+  padding: var(--space-md);
+  text-align: left;
+}
+
+.movieTable th {
+  background-color: var(--gray-100);
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--transition-fast);
+  color: var(--gray-700);
+  position: relative;
+}
+
+.movieTable th:hover {
+  background-color: var(--gray-200);
+}
+
+.movieTable tbody tr {
+  transition: background-color var(--transition-fast);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.movieTable tbody tr:last-child {
+  border-bottom: none;
+}
+
+.movieTable tbody tr:hover {
+  background-color: var(--gray-100);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.actionButton {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-weight: 500;
+}
+
+.viewButton, .editButton, .deleteButton {
+  min-width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-sm);
+  opacity: 0.9;
+  transition: all var(--transition-fast);
+}
+
+.viewButton:hover, .editButton:hover, .deleteButton:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+  box-shadow: var(--shadow-lg);
+}
+
+.viewButton {
+  background-color: var(--info-color);
+  color: white;
+}
+
+.editButton {
+  background-color: var(--warning-color);
+  color: var(--gray-900);
+}
+
+.deleteButton {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.pageButton {
+  background-color: var(--background);
+  color: var(--gray-700);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageButton:hover:not(:disabled) {
+  background-color: var(--gray-100);
+  border-color: var(--gray-400);
+  transform: translateY(-2px);
+}
+
+.pageButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.activePage {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.activePage:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+/* Modal styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  max-width: 500px;
+  width: 90%;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal h2 {
+  margin-bottom: var(--space-lg);
+  color: var(--foreground);
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.cancelButton {
+  background-color: var(--gray-200);
+  color: var(--gray-700);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-weight: 500;
+}
+
+.cancelButton:hover {
+  background-color: var(--gray-300);
+}
+
+.confirmButton {
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-weight: 500;
+}
+
+.confirmButton:hover {
+  background-color: #d32f2f;
+}
+
+/* Grid view styles */
+.movieGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.movieCard {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInUp 0.5s ease-out forwards;
+  position: relative;
+}
+
+.movieCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.moviePoster {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 150%; /* 2:3 aspect ratio */
+  overflow: hidden;
+}
+
+.moviePoster img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.movieCard:hover .moviePoster img {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+
+.movieOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4), transparent);
+  padding: var(--space-lg) var(--space-md) var(--space-md);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.movieCard:hover .movieOverlay {
+  opacity: 1;
+}
+
+.movieDetails {
+  padding: var(--space-md);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--card-bg);
+  position: relative;
+  z-index: 1;
+}
+
+.movieInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.movieTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0 0 var(--space-xs) 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.8rem; /* Ensure consistent height for the title area */
+}
+
+.movieMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--gray-600);
+  font-size: 0.875rem;
+  width: 100%;
+  gap: var(--space-xs);
+}
+
+.movieMetaInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  max-width: 65%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movieRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--warning-color);
+  color: var(--gray-900);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.ratingIcon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+/* Filter and sort controls */
+.filterControls {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.sortControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  background-color: var(--gray-100);
+  border-radius: var(--radius-md);
+}
+
+.sortLabel {
+  font-weight: 500;
+  color: var(--gray-700);
+  white-space: nowrap;
+}
+
+.sortButton {
+  background-color: var(--background);
+  color: var(--gray-700);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sortButton:hover {
+  background-color: var(--gray-100);
+  transform: translateY(-2px);
+}
+
+.activeSortButton {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.activeSortButton:hover {
+  background-color: var(--primary-hover);
+}
+
+.genreSelect {
+  padding: 0.75rem var(--space-md);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  transition: all var(--transition-fast);
+  width: auto;
+  flex: 1;
+  min-width: 180px;
+}
+
+.genreSelect:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.25);
+}
+
+.resetButton {
+  background-color: var(--gray-200);
+  color: var(--gray-700);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.75rem var(--space-md);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-weight: 500;
+}
+
+.resetButton:hover {
+  background-color: var(--gray-300);
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  
+  .filterControls {
+    flex-direction: column;
+  }
+  
+  .sortControls {
+    flex-wrap: wrap;
+  }
+  
+  .movieGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .movieGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+  
+  .container {
+    padding: var(--space-md);
+  }
+}
+
+/* Floating action button */
+.fab {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  z-index: 99;
+  transition: all var(--transition-fast);
+  border: none;
+  font-size: 1.5rem;
+}
+
+.fab:hover {
+  transform: translateY(-5px) rotate(90deg);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 576px) {
+  .fab {
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}
+
+/* Animations for movie cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation for items in grid */
+.movieGrid > div:nth-child(1) { animation-delay: 0.1s; }
+.movieGrid > div:nth-child(2) { animation-delay: 0.15s; }
+.movieGrid > div:nth-child(3) { animation-delay: 0.2s; }
+.movieGrid > div:nth-child(4) { animation-delay: 0.25s; }
+.movieGrid > div:nth-child(5) { animation-delay: 0.3s; }
+.movieGrid > div:nth-child(6) { animation-delay: 0.35s; }
+.movieGrid > div:nth-child(7) { animation-delay: 0.4s; }
+.movieGrid > div:nth-child(8) { animation-delay: 0.45s; }
+.movieGrid > div:nth-child(9) { animation-delay: 0.5s; }
+.movieGrid > div:nth-child(10) { animation-delay: 0.55s; }
+.movieGrid > div:nth-child(11) { animation-delay: 0.6s; }
+.movieGrid > div:nth-child(12) { animation-delay: 0.65s; }
+
+/* Table row animations */
+.movieTable tbody tr {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.movieTable tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.movieTable tbody tr:nth-child(2) { animation-delay: 0.15s; }
+.movieTable tbody tr:nth-child(3) { animation-delay: 0.2s; }
+.movieTable tbody tr:nth-child(4) { animation-delay: 0.25s; }
+.movieTable tbody tr:nth-child(5) { animation-delay: 0.3s; }
+.movieTable tbody tr:nth-child(6) { animation-delay: 0.35s; }
+.movieTable tbody tr:nth-child(7) { animation-delay: 0.4s; }
+.movieTable tbody tr:nth-child(8) { animation-delay: 0.45s; }
+.movieTable tbody tr:nth-child(9) { animation-delay: 0.5s; }
+.movieTable tbody tr:nth-child(10) { animation-delay: 0.55s; } 

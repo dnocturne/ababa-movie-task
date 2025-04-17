@@ -1,0 +1,125 @@
+.navbar {
+  background-color: var(--background);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.navLogo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: transform var(--transition-fast);
+}
+
+.navLogo:hover {
+  transform: scale(1.03);
+}
+
+.navMenu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.navLink {
+  color: var(--foreground);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.navLink:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width var(--transition-normal);
+}
+
+.navLink:hover {
+  color: var(--primary-color);
+}
+
+.navLink:hover:after {
+  width: 100%;
+}
+
+.navButton {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.navButton:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.userName {
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+/* Mobile menu styles for responsive design */
+.mobileMenuToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--foreground);
+}
+
+@media (max-width: 768px) {
+  .mobileMenuToggle {
+    display: block;
+  }
+  
+  .navMenu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--background);
+    flex-direction: column;
+    padding: var(--space-lg);
+    gap: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    border-bottom: 1px solid var(--border-color);
+    transform: translateY(-150%);
+    transition: transform var(--transition-normal);
+    z-index: 99;
+  }
+  
+  .navMenu.active {
+    transform: translateY(0);
+  }
+  
+  .navLink:after {
+    bottom: -3px;
+  }
+} 
