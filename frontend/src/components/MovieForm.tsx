@@ -380,14 +380,17 @@ export default function MovieForm({
         </div>
 
         {formData.posterUrl && (
-          <div className={styles.posterPreview}>
-            <p>Poster Preview:</p>
+          <div className={styles.imagePreview}>
             <img
               src={formData.posterUrl}
-              alt="Poster preview"
-              className={styles.previewImage}
+              alt="Movie poster preview"
               onError={(e) => {
-                e.currentTarget.src = 'https://via.placeholder.com/300x450?text=Invalid+Image+URL';
+                e.currentTarget.src = '/placeholder.png';
+              }}
+              style={{ 
+                maxHeight: '300px', 
+                maxWidth: '100%', 
+                objectFit: 'contain' 
               }}
             />
           </div>
